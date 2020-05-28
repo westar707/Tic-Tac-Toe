@@ -1,4 +1,4 @@
-from IPython.display import print('\n'*100)
+
 def display_board(board):
     pass
 
