@@ -10,4 +10,9 @@ def play_game():
     # Diesplay initial board
     display_board()
 
+    handle_turn()
+
+def handle_turn():
+    position = input()
+
 play_game()
