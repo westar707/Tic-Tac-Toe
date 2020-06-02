@@ -13,6 +13,6 @@ def play_game():
     handle_turn()
 
 def handle_turn():
-    position = input()
+    position = input("Choose a position from 1-9: ")
 
 play_game()
