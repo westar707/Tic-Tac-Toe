@@ -1,4 +1,10 @@
+#----Global Varieables----
+
+#Game board
 board = ["-", "-", "-", "-", "-", "-",  "-", "-", "-"]
+
+# If game is still going
+game_still_going = True
 
 def display_board():
     print(board[0] + " | " + board[1] + " | " + board[2])
