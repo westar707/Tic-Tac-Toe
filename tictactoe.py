@@ -6,6 +6,14 @@ board = ["-", "-", "-", "-", "-", "-",  "-", "-", "-"]
 # If game is still going
 game_still_going = True
 
+# who one? or tie?
+
+winner = None
+
+# Whos turn is it?
+current_player = "X"
+
+
 def display_board():
     print(board[0] + " | " + board[1] + " | " + board[2])
     print(board[3] + " | " + board[4] + " | " + board[5])
@@ -23,6 +31,12 @@ def play_game():
         check_if_game_over()
 
         flip_player()
+
+# The game has ended
+if winner == "X" or winner == "O":
+    print(winner + "Won.")
+elif winner == None:
+    print("Tie.")
 
 def handle_turn():
     position = input("Choose a position from 1-9: ")
