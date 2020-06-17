@@ -14,22 +14,28 @@ winner = None
 current_player = "X"
 
 
+# Display Board
 def display_board():
     print(board[0] + " | " + board[1] + " | " + board[2])
     print(board[3] + " | " + board[4] + " | " + board[5])
     print(board[6] + " | " + board[7] + " | " + board[8])
 
+# Play a game of tic tac toe
 def play_game():
     
-    # Diesplay initial board
+    # Display initial board
     display_board()
 
+    #while the game is still going
     while game_still_going:
         
+        # handle a single turn of an arbitrary player
         handle_turn(current_player)
-
+        
+        # check if game has ended
         check_if_game_over()
 
+        #flip to the other player
         flip_player()
 
 # The game has ended
@@ -38,7 +44,8 @@ if winner == "X" or winner == "O":
 elif winner == None:
     print("Tie.")
 
-def handle_turn():
+#handel a single turn of an arbitary player
+def handle_turn(player):
     position = input("Choose a position from 1-9: ")
     position = int(position) - 1
 
