@@ -62,7 +62,7 @@ def check_for_winner():
     #check rows
     row_winner = check_rows()
     #check colums
-    column_winnwe = check_columns()
+    column_winner = check_columns()
     #check diagonals
     diagonal_winner = check_diagonals()
     return 
