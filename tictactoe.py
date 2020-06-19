@@ -7,7 +7,6 @@ board = ["-", "-", "-", "-", "-", "-",  "-", "-", "-"]
 game_still_going = True
 
 # who one? or tie?
-
 winner = None
 
 # Whos turn is it?
@@ -65,7 +64,15 @@ def check_for_winner():
     column_winner = check_columns()
     #check diagonals
     diagonal_winner = check_diagonals()
-    return 
+    if row_winner:
+        #there was a win
+    elif column_winner:
+        #there was a win
+    elif diagonal_winner:
+        #there was a win
+    else:
+        #there was no win
+        return
 
 def check_rows():
     return
