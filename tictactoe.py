@@ -58,6 +58,11 @@ def check_if_game_over():
 
 
 def check_for_winner():
+
+    #set up global variables
+    global winner
+
+
     #check rows
     row_winner = check_rows()
     #check colums
@@ -66,15 +71,25 @@ def check_for_winner():
     diagonal_winner = check_diagonals()
     if row_winner:
         #there was a win
+        winner = row_winner()
     elif column_winner:
         #there was a win
+        winner = column_winner()
     elif diagonal_winner:
         #there was a win
+        winner = daiginal_winner()
     else:
         #there was no win
+        winner = None 
         return
 
 def check_rows():
+    #set up global variables
+    global game_still_going
+    #check if any of the rows all have the same value (and is not empty)
+    row_1 = board[0] == board[1] == board[2] != "-"
+    row_2 = board[3] == board[4] == board[5] != "-"
+    row_3 = board[6] == board[7] == board[8] != "-"
     return
 
 def check_columns():
