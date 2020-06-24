@@ -122,6 +122,19 @@ def check_columns():
     return
 
 def check_diagonals():
+    #set up global variables
+    global game_still_going
+    #check if any of the rows all have the same value (and is not empty)
+    diagonal_1 = board[0] == board[4] == board[8] != "-"
+    diagonal_2 = board[6] == board[4] == board[2] != "-"
+    #if ant row does have a match flag, flag that there is a win
+    if diagonal_1 or diagonal_2:
+        game_still_going = False
+    # return the winner (X or O)
+    if diagonal_1:
+        return board[0]
+    elif diagonal_2:
+        return board[6]
     return
 
 def check_if_tie():
