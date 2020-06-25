@@ -77,7 +77,7 @@ def check_for_winner():
         winner = column_winner()
     elif diagonal_winner:
         #there was a win
-        winner = daigonal_winner()
+        winner = diagonal_winner()
     else:
         #there was no win
         winner = None 
@@ -127,7 +127,7 @@ def check_diagonals():
     #check if any of the rows all have the same value (and is not empty)
     diagonal_1 = board[0] == board[4] == board[8] != "-"
     diagonal_2 = board[6] == board[4] == board[2] != "-"
-    #if ant row does have a match flag, flag that there is a win
+    #if any row does have a match flag, flag that there is a win
     if diagonal_1 or diagonal_2:
         game_still_going = False
     # return the winner (X or O)
