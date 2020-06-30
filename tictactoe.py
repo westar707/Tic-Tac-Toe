@@ -54,10 +54,21 @@ def handle_turn(player):
     #whatver the user input, make sure it is vaid and spot is open
     valid = False
     while not valid:
-        
-        board[position] = "X"
+        #make sure the input is valid
+        while position not in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
+            position = input ("Choose a Position fron 1-9")
 
-    display_board()
+        # get correct index in our board list
+        if board[position] == "-":
+            valid = True
+        else:
+            print("You can go there. Go again.")
+
+        #Put the game piece on the board
+        board[position] = player
+        
+        #show the game board
+        display_board()
 
 def check_if_game_over():
     check_for_winner()
@@ -107,7 +118,8 @@ def check_rows():
         return board[3]
     elif row_3:
         return board[6]
-    return
+    else:
+        return None
 
 def check_columns():
     #set up global variables
@@ -126,7 +138,8 @@ def check_columns():
         return board[1]
     elif column_3:
         return board[2]
-    return
+    else: 
+        return None 
 
 def check_diagonals():
     #set up global variables
@@ -142,11 +155,20 @@ def check_diagonals():
         return board[0]
     elif diagonal_2:
         return board[6]
-    return
+    else:
+        return None
 
+#check for tie 
 def check_if_tie():
-    return
-
+    #Set global variables
+    global game_still_going
+    #if board is full
+    if "-" not in board:
+        game_still_going = False
+        return True
+    else:
+        return False
+        
 def flip_player():
     return
 
