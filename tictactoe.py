@@ -49,7 +49,7 @@ def display_board():
 def handle_turn(player):
     print(player + 's turn.')
     position = input("Choose a position from 1-9: ")
-    position = int(position) - 1
+    position = int(position) 
 
     #whatver the user input, make sure it is vaid and spot is open
     valid = False
@@ -62,7 +62,7 @@ def handle_turn(player):
         if board[position] == "-":
             valid = True
         else:
-            print("You can go there. Go again.")
+            print("You can't go there. Go again.")
 
         #Put the game piece on the board
         board[position] = player
@@ -166,11 +166,22 @@ def check_if_tie():
     if "-" not in board:
         game_still_going = False
         return True
+    #else there is no tie
     else:
         return False
-        
+
 def flip_player():
-    return
+    #global variable we need
+    global current_player
+    #if the current play was x make it o
+    if current_player == "X":
+        current_player = "O"
+    #or if the current player owas O make it X
+    elif current_player == "O":
+        current_player = "X"
+
+#-------- Start Execution------
+#Play a Game of Tic Tac Toe ------
 
 play_game()
 
